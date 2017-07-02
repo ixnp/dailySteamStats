@@ -1,0 +1,25 @@
+{
+  "name": "dailysteamstats",
+  "version": "1.0.0",
+  "description": "a web app to track your daily playtime useing the steam api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ixnp/dailySteamStats.git"
+  },
+  "keywords": [
+    "codefellows",
+    "301",
+    "project"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ixnp/dailySteamStats/issues"
+  },
+  "homepage": "https://github.com/ixnp/dailySteamStats#readme"
+}
