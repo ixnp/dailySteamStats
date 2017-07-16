@@ -16,15 +16,19 @@ $('#wordGuess').on('click',function(){
 
 //letter guess//
 var userInput = $('#form');
-var guessArr = [];
-var test = 'test'
+var guessArr = ['na','na','na','na',];
+var test = 'blue'
 
 userInput.submit(function(e){
   var userGuess = $('#guess').val();
   console.log('g1'+userGuess);
 if (test.indexOf(userGuess)!= -1){
+    var position = test.indexOf(userGuess)
+      console.log(position);
+      console.log('yes!');
+    var updateArr = guessArr.splice(position, 1, userGuess);
+    console.log(guessArr);
 
-    console.log('yes!');
 }
 else{
   console.log('fuck');
