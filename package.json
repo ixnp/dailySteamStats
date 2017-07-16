@@ -2,7 +2,7 @@
   "name": "dailysteamstats",
   "version": "1.0.0",
   "description": "a web app to track your daily playtime useing the steam api",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/ixnp/dailySteamStats/issues"
   },
-  "homepage": "https://github.com/ixnp/dailySteamStats#readme"
+  "homepage": "https://github.com/ixnp/dailySteamStats#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "jquery": "^3.2.1",
+    "pg": "^6.4.0"
+  }
 }

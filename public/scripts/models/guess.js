@@ -1,5 +1,14 @@
 'use strict';
-(function (module) {
+// (function (module) {
+//
+// $('#wordGuess').click(funtion(
+//   $('#letter').toggleClass('wordGuess')
+// ));
+//
+//
+//
+// })(window);
 
-
-})(window);
+$('#wordGuess').on('click',function(){
+  $('#letter').toggleClass('letter test');
+});
