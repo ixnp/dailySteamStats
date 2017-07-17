@@ -29,15 +29,29 @@ if (test.indexOf(userGuess)!= -1){
     var updateArr = guessArr.splice(position, 1, userGuess);
     console.log(guessArr);
 
+    $('#correctLetters').empty();
+
 }
 else{
+
   console.log('fuck');
 }
 
   $('#form')[0].reset();
   e.preventDefault();
 
+  $.each(guessArr, function( index, value ) {
+      $('#correctLetters').append('<div>'+ value +'</div>')
+  });
+
 });
+//  var newli = '<div>' + guessArr + '</div>'
+//
+// $(guessArr).each(function(i){
+//   $('#correctLetters').append(newli)
+// });
+
+
 
 
 //word guess if user toggles class//
