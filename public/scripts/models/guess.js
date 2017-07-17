@@ -18,9 +18,22 @@ $('#wordGuess').on('click',function(){
 var userInput = $('#form');
 var guessArr = ['na','na','na','na',];
 var test = 'blue'
-var numberTry = 5
+var i = 0;
 
 
+var roundForm = $('#roundForm');
+
+roundForm.submit(function(e){
+  var numberOfRounds = $('#round').val();
+  console.log('test'+ numberOfRounds);
+  game();
+  $('#form')[0].reset();
+  e.preventDefault();
+});
+
+//not working need to turn into function that is called after submit//
+// roundForm.game = function(){
+// while(i < numberOfRounds){
 userInput.submit(function(e){
   var userGuess = $('#guess').val();
   console.log('g1'+userGuess);
@@ -35,21 +48,18 @@ if (test.indexOf(userGuess)!= -1){
     $.each(guessArr, function( index, value ) {
         $('#correctLetters').append('<div>'+ value +'</div>')
     });
-
+i++;
 }
 else{
   alert('nope, try again!')
   console.log('fuck');
+  i++;
 }
 
   $('#form')[0].reset();
   e.preventDefault();
 });
-//  var newli = '<div>' + guessArr + '</div>'
-//
-// $(guessArr).each(function(i){
-//   $('#correctLetters').append(newli)
-// });
+// }};
 
 
 
