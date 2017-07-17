@@ -18,6 +18,8 @@ $('#wordGuess').on('click',function(){
 var userInput = $('#form');
 var guessArr = ['na','na','na','na',];
 var test = 'blue'
+var numberTry = 5
+
 
 userInput.submit(function(e){
   var userGuess = $('#guess').val();
@@ -30,20 +32,18 @@ if (test.indexOf(userGuess)!= -1){
     console.log(guessArr);
 
     $('#correctLetters').empty();
+    $.each(guessArr, function( index, value ) {
+        $('#correctLetters').append('<div>'+ value +'</div>')
+    });
 
 }
 else{
-
+  alert('nope, try again!')
   console.log('fuck');
 }
 
   $('#form')[0].reset();
   e.preventDefault();
-
-  $.each(guessArr, function( index, value ) {
-      $('#correctLetters').append('<div>'+ value +'</div>')
-  });
-
 });
 //  var newli = '<div>' + guessArr + '</div>'
 //

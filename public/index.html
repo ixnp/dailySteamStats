@@ -6,6 +6,17 @@
     <link rel="stylesheet" href="styles/base.css">
   </head>
   <body>
+
+    <form action="index.html"  id='roundForm'>
+      <div>
+        <p class='rounds'>Enter length of word.</p>
+        <input type="number" name="rounds" min="0" max="10" required >
+        <span class="validity"></span>
+      </div>
+      <div>
+        <input type="submit">
+      </div>
+    </form>
 <form class="letterGuess" action="index.html" id="form">
   <input type="text" name="letter" value="submit" id="guess" class="letter">
 <h1  id="letter" class="letter">I'd like to guess the word!</h1>
@@ -19,5 +30,6 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
     <script src="/scripts/models/guess.js"></script>
+      <script src="/scripts/models/selectingWord.js"></script>
   </body>
 </html>
