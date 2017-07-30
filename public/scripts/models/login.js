@@ -1,14 +1,47 @@
+'use strict';
+(function(module) {
+
+function UserInfo(rawDataObj) {
+  Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
+}
 
 var app = app || {};
 var loginForm = $('#login');
+const UserName = []
+const Password = []
+UserInfo.all = [];
+
 
 loginForm.submit(function(e){
   var username = $('#user').val();
   var password = $('#password').val();
-  console.log(''+ username + password);
+  console.log(''+ username +' ' + password);
   $('#login')[0].reset();
   e.preventDefault();
+
+  UserInfo.fetchAll();
 });
+
+
+
+UserInfo.loadAll = rows => {
+  UserInfo.all = rows.map(ele => new UserInfo(ele));
+};
+
+UserInfo.fetchAll = callback => {
+  $.get('/userinfo')
+  .then(
+    results => {
+      UserInfo.loadAll(results);
+      console.log('results'+ results);
+      callback();
+    }
+  )
+}
+console.log('here'+ UserInfo.all);
+
+
+
 
 //REQUEST TO DATABASE SET UP//
 // (function(module) {
@@ -26,3 +59,4 @@ loginForm.submit(function(e){
 //   $.get('/wordsdb')
 //   .then()
 // }
+})(window);

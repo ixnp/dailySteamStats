@@ -1,14 +1,6 @@
 'use strict';
 
-// (function (module) {
-//
-// $('#wordGuess').click(funtion(
-//   $('#letter').toggleClass('wordGuess')
-// ));
-//
-//
-//
-// })(window);
+
 // Uster wants to guess a full word//
 $('#wordGuess').on('click',function(){
   $('#guess').toggleClass('letter userWordGuess');
@@ -60,9 +52,3 @@ else{
   e.preventDefault();
 });
 // }};
-
-
-
-
-//word guess if user toggles class//
- // var userWordGuess = $('#letter').val();

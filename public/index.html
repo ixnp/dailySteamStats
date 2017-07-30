@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <title>hangman</title>
     <link rel="stylesheet" href="styles/base.css">
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
 
     <!-- for handel bar setu up
     <script id="article-template" type="text/x-handlebars-template">
@@ -16,11 +21,22 @@
 
   </head>
   <body>
+    <header>
+      <ul>
+        <li class="tab" id="home"><a href="/" class="icon-home">Home</a></li>
+        <li id="prifile"><a href="/profile">Profile</a></li>
+      </ul>
+    </header>
 
   <form class="round" action="index.html" id="login">
     <input type="text" name="user" id="user" class="user">
     <input type="password" name="password" id="password" class="password">
     <button value="submit">Login</button>
+    <span id="login_message"></span>
+  </form>
+
+  <form class="random" action="index.html" id="random">
+    <button value="submit" id='randomButton'>Random Word!</button>
   </form>
 
 <form class="round" action="index.html" id="roundForm">
@@ -35,10 +51,9 @@
 <ul id='correctLetters'>''dffdsa</ul>
   <!-- //handelbars//\ -->
   <!-- uncomment if npm install jquery isn't working  -->
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+
+
+<script>'/scripts/controller/routs.js'</script>
       <script src="/scripts/models/login.js"></script>
         <script src="/scripts/models/guess.js"></script>
   </body>
