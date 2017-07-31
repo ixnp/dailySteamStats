@@ -18,8 +18,6 @@ loginForm.submit(function(e){
   console.log(''+ username +' ' + password);
   $('#login')[0].reset();
   e.preventDefault();
-
-  UserInfo.fetchAll();
 });
 
 
@@ -38,7 +36,9 @@ UserInfo.fetchAll = callback => {
     }
   )
 }
-console.log('here'+ UserInfo.all);
+
+
+
 
 
 

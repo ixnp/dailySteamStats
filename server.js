@@ -39,35 +39,13 @@ app.get('/userinfo', (request, response) => {
 })
 
 
-// $.ajax({
-//   url:'https://wordsapiv1.p.mashape.com/words/apartment/frequency',
-//   method: 'GET'
-//   headers: {
-//     Authorization:'X-Mashape-Key bqQQLMlZqZmshdbM8ZvMthIqqcKRp1owFegjsngWWFBPHJwqkh'
-//   }
-//   });
-//   .then(console.log)
-// })
-//Data base name WordsDB//
-//rout to get data from db//
-// app.get('/wordsdb', function(req,res){
-//   client.query(`
-//     SELECT * FROM userinfo
-//   `)
-//   .then() //something here//
-//   res.send({type:'GET'});
-// });
-// // adding data, add user and words to db//
-// app.post('/wordsdb', function(req,res){
-//   res.send({type:'POST'});
-// });
-// //update data alrady, update already exsisting users words in db, id will be users id//
-// app.put('/wordsdb/:id', function(req,res){
-//   res.send({type:'PUT'});
-// });
-// //DELETE user from DB
-// app.delete('/wordsdb/:id', function(req,res){
-//   res.send({type:'DELETE'});
-// });
-//
-// module.exports = router;
+//REST GET FOR WORDS not working
+app.get('/word', (request, response) => {
+  client.query("'SELECT* FROM '+ wordsTableNumber+' WHERE id ='+ wordId ")
+  .then(function(result){
+    console.log(response);
+  })
+  .catch(function(err){
+    console.log(err);
+  })
+})
