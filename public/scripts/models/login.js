@@ -1,5 +1,5 @@
 'use strict';
-(function(module) {
+// (function(module) {
 
 function UserInfo(rawDataObj) {
   Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
@@ -21,52 +21,28 @@ loginForm.submit(function(e){
 
 
 });
-
+UserInfo.loadAll = rows => {
+UserInfo.all = rows.map(ele => new UserInfo(ele));
+}
+// dont delete working
 $('#button').on('click',function(){
 $.ajax({
   url:'/userinfo',
   contentType:'json',
   success: function(response){
     console.log(response);
+    UserInfo.loadAll(response);
+    callback();
+
   }
 });
 });
-
-// UserInfo.loadAll = rows => {
-//   UserInfo.all = rows.map(ele => new UserInfo(ele));
-// };
-//
-// UserInfo.fetchAll = callback => {
-//   $.get('/userinfo')
-//   .then(
-//     results => {
-//       UserInfo.loadAll(results);
-//       console.log('results'+ results);
-//       callback();
-//     }
-//   )
-// }
+//new user//
+UserInfo.prototype.insertNewUser = function(callback) {
+  $.post('/userinfo', {username: this.username, password: this.password, win: this.win, loss: this.loss,})
+  .then(console.log)
+  .then(callback);
+};
 
 
-
-
-
-
-
-//REQUEST TO DATABASE SET UP//
-// (function(module) {
-//   function Article(rawDataObj) {
-//     Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
-//   }
-//
-//   User.all = [];
-//
-// User.loadAll = rows => {
-//   //user info//
-// };
-//
-// User.fetchAll = callback => {
-//   $.get('/wordsdb')
-//   .then()
-// }
-})(window);
+// })(window);

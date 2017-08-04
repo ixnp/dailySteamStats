@@ -31,12 +31,23 @@ const router = express.Router();
 app.get('/userinfo', (request, response) => {
   client.query('SELECT * FROM userinfo')
   .then(function(result){
-    response.send(result);
+    response.send(result.rows);
   })
   .catch(function(err){
     console.log(err);
   })
 })
+
+app.post('/userinfo', (request, response) => {
+  client.query(
+    'INSERT INTO userinfo(username, password) VALUES($1, $2, $3, $4) ON CONFLICT DO NOTHING',
+    [request.body.username, request.body.password, request.body.win, request.body.loss]
+  )
+
+  .then(() => response.send('Insert complete'))
+  .catch(console.error);
+});
+
 
 
 

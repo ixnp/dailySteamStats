@@ -10,18 +10,38 @@
     crossorigin="anonymous"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
 
-    <!-- for handel bar setu up
+
     <script id="article-template" type="text/x-handlebars-template">
-    <article class="clearfix" win="{{win}}" loss="{{loss}}">
+    <article class="score" win="{{win}}" loss="{{loss}}">
+      <section>{{{Username}}}</section>
       <section>{{{win}}}</section>
       <section>{{{loss}}}</section>
       <section class="words">{{{words}}}</section>
     </article>
   </script> -->
+<!-- new user
+
 
   </head>
   <body>
-<h1>LOL</h1>
+    <!-- toggle class if user choses log in or regerster, send a rest request to update the database or retreve it -->
+<h1>Register</h1>
+<h1>Sign in</h1>
+<section id="newUser" class="newUser">
+  <h1>Enter User Name and Password</h1>
+  <form action="#" id="new-form">
+    <label>
+      <input type="text" id="newUserName" placeholder="User Name" required>
+    </label>
+    <label>
+      <input type="text" id="newPassword" placeholder="Password" required>
+    </label>
+
+    <button type="submit" id="loginSubmit">Submit</button>
+  </form>
+</section>
+
+
 
 
 <script>'/scripts/controller/routs.js'</script>
