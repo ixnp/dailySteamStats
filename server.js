@@ -40,8 +40,8 @@ app.get('/userinfo', (request, response) => {
 
 app.post('/userinfo', (request, response) => {
   client.query(
-    'INSERT INTO userinfo(username, password) VALUES($1, $2, $3, $4) ON CONFLICT DO NOTHING',
-    [request.body.username, request.body.password, request.body.win, request.body.loss]
+    'INSERT INTO userinfo(username, password) VALUES($1, $2,) ON CONFLICT DO NOTHING',
+    [request.body.username, request.body.password,]
   )
 
   .then(() => response.send('Insert complete'))

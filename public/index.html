@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>hangman</title>
     <link rel="stylesheet" href="styles/base.css">
+      <link rel="stylesheet" href="styles/layout.css">
+        <link rel="stylesheet" href="styles/modules.css">
     <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -21,23 +23,33 @@
 
   </head>
   <body>
+  <div class="paper">
     <header>
       <ul>
         <li class="tab" id="home"><a href="/" class="icon-home">Home</a></li>
-        <li id="prifile"><a href="/profile">Profile</a></li>
+        <li id="profile"><a href="/profile">Profile</a></li>
+        <li id="about">about</li>
       </ul>
     </header>
-
+<img src="" alt="">
 <button id="button">button</button>
 
+
+
+  <h1 id="enterUserName" class ="visible">Enter User Name and Password</h1>
   <form class="round" action="index.html" id="login">
     <input type="text" name="user" id="user" class="user">
     <input type="password" name="password" id="password" class="password">
-    <button value="submit">Login</button>
+    <button value="submit" name="login" id="loginButton">Login</button>
+    <button value="submit" name="login" id="register">Register</button>
     <span id="login_message"></span>
   </form>
 
 
+
+
+
+<div id="gameStuff" class="visible">
   <form class="numberOfLetters" action="index.html" id="numberOfLettersForm">
     <input type="text" name="round" id="numberOfLettersInput" class="numberOfLettersInput">
     <button value="submit">numberOfLetters?</button>
@@ -54,10 +66,11 @@
 <ul id='correctLetters'>''dffdsa</ul>
   <!-- //handelbars//\ -->
   <!-- uncomment if npm install jquery isn't working  -->
-
+</div>
 
 <script>'/scripts/controller/routs.js'</script>
       <script src="/scripts/models/login.js"></script>
         <script src="/scripts/models/guess.js"></script>
+</div>
   </body>
 </html>

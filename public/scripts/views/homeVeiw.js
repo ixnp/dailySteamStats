@@ -10,3 +10,6 @@ homeView.init= function(){
   $('#home').text('Hello page is working!');
 }
 })(app);
+
+
+$('#gameStuff').toggleClass('visible');
