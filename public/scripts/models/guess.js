@@ -65,7 +65,7 @@ console.log(WordInPlay);
 
 //not working need to turn into function that is called after submit//
 // roundForm.game = function(){
-// while(i < numberOfRounds){
+
 userInput.submit(function(e){
   var userGuess = $('#guess').val();
   console.log('g1'+userGuess);

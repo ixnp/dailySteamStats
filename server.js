@@ -31,21 +31,22 @@ const router = express.Router();
 app.get('/userinfo', (request, response) => {
   client.query('SELECT * FROM userinfo')
   .then(function(result){
-    response.send(result.rows)
+    response.send(result);
   })
   .catch(function(err){
     console.log(err);
   })
 })
+
 
 
 //REST GET FOR WORDS not working
-app.get('/word', (request, response) => {
-  client.query("'SELECT* FROM '+ wordsTableNumber+' WHERE id ='+ wordId ")
-  .then(function(result){
-    console.log(response);
-  })
-  .catch(function(err){
-    console.log(err);
-  })
-})
+// app.get('/word', (request, response) => {
+//   client.query("'SELECT* FROM '+ wordsTableNumber+' WHERE id ='+ wordId ")
+//   .then(function(result){
+//       response.send('SUCCESS!');
+//   })
+//   .catch(function(err){
+//     console.log(err);
+//   })
+// })

@@ -18,24 +18,34 @@ loginForm.submit(function(e){
   console.log(''+ username +' ' + password);
   $('#login')[0].reset();
   e.preventDefault();
+
+
 });
 
+$('#button').on('click',function(){
+$.ajax({
+  url:'/userinfo',
+  contentType:'json',
+  success: function(response){
+    console.log(response);
+  }
+});
+});
 
-
-UserInfo.loadAll = rows => {
-  UserInfo.all = rows.map(ele => new UserInfo(ele));
-};
-
-UserInfo.fetchAll = callback => {
-  $.get('/userinfo')
-  .then(
-    results => {
-      UserInfo.loadAll(results);
-      console.log('results'+ results);
-      callback();
-    }
-  )
-}
+// UserInfo.loadAll = rows => {
+//   UserInfo.all = rows.map(ele => new UserInfo(ele));
+// };
+//
+// UserInfo.fetchAll = callback => {
+//   $.get('/userinfo')
+//   .then(
+//     results => {
+//       UserInfo.loadAll(results);
+//       console.log('results'+ results);
+//       callback();
+//     }
+//   )
+// }
 
 
 
